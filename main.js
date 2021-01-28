@@ -36,19 +36,18 @@ function updateCoffees(e) {
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
-// The filter() method creates a new array with all elements that pass the
-// test implemented by the provided function.
-function searchForName (input) {
-var searchName = input.target.value.toLowerCase();
 
-var filterNames = coffees.filter((coffeeName) => {
-    return (
-        coffeeName.name.toLowerCase().includes(searchName)
-    );
-})
-displayCoffeeNames(filterNames);
+function searchForName(e) {
+    // e.preventDefault(); // don't submit the form, we just want to update the data
+    var selectedCoffee = search.value.toLowerCase();
+    var filteredCoffees = [];
+    coffees.forEach(function(coffee) {
+        if (coffee.name.toLowerCase().includes(selectedCoffee)) {
+            filteredCoffees.push(coffee);
+        }
+    });
+    tbody.innerHTML = renderCoffees(filteredCoffees);
 }
-
 
 
 
