@@ -4,11 +4,10 @@
 // Example input: {id: 2, name: 'Half City', roast: 'light'}
 // Example output: <tr class="coffee"> <td>2</td> <td>Half City</td> <td>light</td> </tr>
 function renderCoffee(coffee) {
-    var html = '<tr class="coffee">';
-    html += '<td>' + coffee.id + '</td>';
-    html += '<td>' + coffee.name + '</td>';
-    html += '<td>' + coffee.roast + '</td>';
-    html += '</tr>';
+    var html = '<div class="coffee">';
+    html += '<h3>' + coffee.name + '<span>' + ' ' + coffee.roast + '</span>' + '</h3>';
+    // html += ;
+    html += '</div>';
 
     return html; // returns html code
 }
@@ -16,7 +15,7 @@ function renderCoffee(coffee) {
 // and compiles it into a table
 function renderCoffees(coffees) {
     var html = '';
-    for(var i = coffees.length - 1; i >= 0; i--) {
+    for(var i = 0; i < coffees.length; i++) {
         html += renderCoffee(coffees[i]);
     }
     return html;
@@ -36,6 +35,23 @@ function updateCoffees(e) {
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
+
+// The filter() method creates a new array with all elements that pass the
+// test implemented by the provided function.
+function searchForName (input) {
+var searchName = input.target.value.toLowerCase();
+
+var filterNames = coffees.filter((coffeeName) => {
+    return (
+        coffeeName.name.toLowerCase().includes(searchName)
+    );
+})
+displayCoffeeNames(filterNames);
+}
+
+
+
+
 // -The coffees variable is an array of objects containing the ID, name and roast values of each coffee
 // -It is used in the renderCoffees function to iterate through the outputs of the renderCoffee function.
 // -It is used in the updateCoffees function
@@ -62,7 +78,10 @@ var coffees = [
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
+var search = document.getElementById('search');
 
 tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
+
+search.addEventListener("keyup", searchForName)
