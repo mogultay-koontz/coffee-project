@@ -1,4 +1,4 @@
-// "use strict"
+"use strict"
 
 // This function renders a table for a specific coffee type including ID, Name, and Roast
 // Example input: {id: 2, name: 'Half City', roast: 'light'}
@@ -32,6 +32,9 @@ function updateCoffees(e) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
         }
+        if (selectedRoast === 'all') {
+            filteredCoffees.push(coffee);
+        }
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
@@ -57,7 +60,7 @@ function searchForName(e) {
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
-    {id: 1, name: 'Light City', roast: 'light'},
+    {id: 1, name: 'Light City', roast: 'light', type: 'coffee'},
     {id: 2, name: 'Half City', roast: 'light'},
     {id: 3, name: 'Cinnamon', roast: 'light'},
     {id: 4, name: 'City', roast: 'medium'},
