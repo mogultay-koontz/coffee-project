@@ -53,14 +53,13 @@ function searchForName(e) {
 }
 
 
-
 // -The coffees variable is an array of objects containing the ID, name and roast values of each coffee
 // -It is used in the renderCoffees function to iterate through the outputs of the renderCoffee function.
 // -It is used in the updateCoffees function
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
-    {id: 1, name: 'Light City', roast: 'light', type: 'coffee'},
+    {id: 1, name: 'Light City', roast: 'light',},
     {id: 2, name: 'Half City', roast: 'light'},
     {id: 3, name: 'Cinnamon', roast: 'light'},
     {id: 4, name: 'City', roast: 'medium'},
