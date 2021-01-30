@@ -4,8 +4,8 @@
 // Example input: {id: 2, name: 'Half City', roast: 'light'}
 // Example output: <tr class="coffee"> <td>2</td> <td>Half City</td> <td>light</td> </tr>
 function renderCoffee(coffee) {
-    var html = '<div class="coffee">';
-    html += '<h3>' + coffee.name + '<span>' + ' ' + coffee.roast + '</span>' + '</h3>';
+    var html = '<div class="coffee ">';
+    html += '<h3>' + coffee.name + '<span class="font-weight-lighter">' + ' ' + coffee.roast + '</span>' + '</h3>';
     // html += ;
     html += '</div>';
 
@@ -39,7 +39,7 @@ function updateCoffees(e) {
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
-
+// This function will filter the coffee names when you type out characters
 function searchForName(e) {
     // e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedCoffee = search.value.toLowerCase();
@@ -90,7 +90,7 @@ var coffees = [
     {id: 13, name: 'Italian', roast: 'dark'},
     {id: 14, name: 'French', roast: 'dark'},
 ];
-// These are used to locate/reference the proper htlm elements in order
+// These are used to locate/reference the proper html elements in order
 // to add event listeners and modify the html
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
