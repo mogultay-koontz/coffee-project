@@ -7,26 +7,31 @@
 </head>
 <body>
     <h1>Coffee!</h1>
-
+<h3>Choose a Roast or Search by Name</h3>
     <form>
-        <label for="roast-selection"></label>
+        <label for="roast-selection">Select a Roast:</label>
         <select id="roast-selection">
             <option>light</option>
             <option>medium</option>
             <option>dark</option>
             <option>all</option>
         </select>
-        <input id="submit" type="submit" />
-        <label for="search">Coffee Name</label>
+        <label for="search">Name of Coffee:</label>
         <input type="text" name="search" id="search">
+        <input id="submit" type="submit">
     </form>
+
+<h3>Add new Coffee!</h3>
     <form>
-        <label for="newRoast">Roast</label>
-        <input type="text" id="newRoast">
-        <label for="newName">Name</label>
-        <input type="text" id="newName">
-        <input type="submit" id="submitBtn">
+<!--Adding new form with user inputs for the new coffee name and roast-->
+<!--The id number will be added automatically with the createCoffee function-->
+        <label for="nameOfCoffee">Name:</label>
+        <input type="text" id="nameOfCoffee">
+        <label for="typeOfRoast">Roast:</label>
+        <input type="text" id="typeOfRoast">
+        <input type="submit" id="submitNewCoffee" value="Add">
     </form>
+
     <table>
         <thead>
             <div>

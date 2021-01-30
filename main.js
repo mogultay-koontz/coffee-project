@@ -52,6 +52,22 @@ function searchForName(e) {
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
+// This will add a new coffee name, roast, and id number
+// To see the changes, enter the new name and roast and press the 'Add' button. And select
+// 'All' roast or the roast type you specified when a creating and then hit the above submit button.
+function createCoffee(e) {
+    e.preventDefault(); // don't submit the form, we just want to update the data
+    var nameOfCoffee = document.getElementById('nameOfCoffee').value;
+    var typeOfRoast = document.getElementById('typeOfRoast').value;
+    coffees.push({
+        name: nameOfCoffee,
+        roast: typeOfRoast,
+        id: coffees.length + 1,
+    })
+}
+
+
+
 
 // -The coffees variable is an array of objects containing the ID, name and roast values of each coffee
 // -It is used in the renderCoffees function to iterate through the outputs of the renderCoffee function.
@@ -80,9 +96,12 @@ var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
 var search = document.getElementById('search');
+var newCoffee = document.getElementById('submitNewCoffee') // For adding new coffee
 
 tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
 
-search.addEventListener("keyup", searchForName)
+search.addEventListener("keyup", searchForName);
+
+newCoffee.addEventListener("click", createCoffee); // For adding new coffee
