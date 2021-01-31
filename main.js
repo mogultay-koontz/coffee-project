@@ -4,7 +4,7 @@
 // Example input: {id: 2, name: 'Half City', roast: 'light'}
 // Example output: <tr class="coffee"> <td>2</td> <td>Half City</td> <td>light</td> </tr>
 function renderCoffee(coffee) {
-    var html = '<div class="coffee ">';
+    var html = '<div class="coffee m-4">';
     html += '<h3>' + coffee.name + '<span class="font-weight-lighter">' + ' ' + coffee.roast + '</span>' + '</h3>';
     // html += ;
     html += '</div>';
