@@ -64,6 +64,7 @@ function createCoffee(e) {
         roast: typeOfRoast,
         id: coffees.length + 1,
     })
+    updateCoffees(e);
 }
 
 
@@ -105,3 +106,4 @@ submitButton.addEventListener('click', updateCoffees);
 search.addEventListener("keyup", searchForName);
 
 newCoffee.addEventListener("click", createCoffee); // For adding new coffee
+

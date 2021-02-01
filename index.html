@@ -26,10 +26,10 @@
     <form>
         <label for="roast-selection">Select a Roast:</label>
         <select class="custom-select mb-3" id="roast-selection">
-            <option>light</option>
+            <option>all</option>
             <option>medium</option>
             <option>dark</option>
-            <option>all</option>
+            <option>light</option>
         </select>
         <label for="search">Name of Coffee:</label>
         <input class="form-control mb-3 " type="text" name="search" id="search">
@@ -43,7 +43,12 @@
         <label for="nameOfCoffee">Name:</label>
         <input class="form-control mb-3 "type="text" id="nameOfCoffee">
         <label for="typeOfRoast">Roast:</label>
-        <input class="form-control mb-3 "type="text" id="typeOfRoast">
+        <select class="custom-select mb-3" id="typeOfRoast">
+            <option>all</option>
+            <option>medium</option>
+            <option>dark</option>
+            <option>light</option>
+        </select>
         <input class="btn btn-primary btn-block" type="submit" id="submitNewCoffee" value="Add">
     </form>
     </div>
