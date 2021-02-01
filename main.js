@@ -68,8 +68,6 @@ function createCoffee(e) {
 }
 
 
-
-
 // -The coffees variable is an array of objects containing the ID, name and roast values of each coffee
 // -It is used in the renderCoffees function to iterate through the outputs of the renderCoffee function.
 // -It is used in the updateCoffees function
@@ -99,6 +97,7 @@ var roastSelection = document.querySelector('#roast-selection');
 var search = document.getElementById('search');
 var newCoffee = document.getElementById('submitNewCoffee') // For adding new coffee
 
+
 tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
@@ -106,4 +105,5 @@ submitButton.addEventListener('click', updateCoffees);
 search.addEventListener("keyup", searchForName);
 
 newCoffee.addEventListener("click", createCoffee); // For adding new coffee
+
 

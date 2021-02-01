@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="body">
 <div class="container-fluid">
     <h1 class="text-center">Coffee!</h1>
     <hr class="border w-90">
@@ -40,8 +40,6 @@
     <form>
         <!--Adding new form with user inputs for the new coffee name and roast-->
         <!--The id number will be added automatically with the createCoffee function-->
-        <label for="nameOfCoffee">Name:</label>
-        <input class="form-control mb-3 "type="text" id="nameOfCoffee">
         <label for="typeOfRoast">Roast:</label>
         <select class="custom-select mb-3" id="typeOfRoast">
             <option>all</option>
@@ -49,6 +47,8 @@
             <option>dark</option>
             <option>light</option>
         </select>
+        <label for="nameOfCoffee">Name:</label>
+        <input class="form-control mb-3 "type="text" id="nameOfCoffee">
         <input class="btn btn-primary btn-block" type="submit" id="submitNewCoffee" value="Add">
     </form>
     </div>
