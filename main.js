@@ -67,6 +67,17 @@ function createCoffee(e) {
     updateCoffees(e);
 }
 
+function changeBackground () {
+    var selectedRoast = roastSelection.value;
+    var body = document.getElementsByTagName("body")[0]
+    if (selectedRoast === 'light') {
+        body.style['background-color'] = "#F5F5F5";
+    } else if (selectedRoast === 'medium') {
+        body.style['background-color'] = "#d3d3d3";
+    } else if  (selectedRoast === 'dark') {
+        body.style['background-color'] = "#A9A9A9";
+    }
+}
 
 // -The coffees variable is an array of objects containing the ID, name and roast values of each coffee
 // -It is used in the renderCoffees function to iterate through the outputs of the renderCoffee function.
@@ -101,6 +112,8 @@ var newCoffee = document.getElementById('submitNewCoffee') // For adding new cof
 tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
+
+submitButton.addEventListener('click', changeBackground);
 
 search.addEventListener("keyup", searchForName);
 
