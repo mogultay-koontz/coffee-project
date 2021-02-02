@@ -76,6 +76,8 @@ function changeBackground () {
         body.style['background-color'] = "#d3d3d3";
     } else if  (selectedRoast === 'dark') {
         body.style['background-color'] = "#A9A9A9";
+    } else if  (selectedRoast === 'all') {
+        body.style['background-color'] = "#FFFFFF";
     }
 }
 
